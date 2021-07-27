@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock{
+            width: 400px;
+            height: 400px;
+            background-image: url('./1024px-Analogue_clock_face.svg.png');
+            background-size: cover;
+            margin: 100px auto;
+            position: relative;
+        }
+        .clock >div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        .hours{
+            width: 55%;
+            height: 55%;
+            animation: clock 43200s linear infinite;
+        }
+        .hour{
+            width: 5px;
+            height: 50%;
+            background-color:black;
+            margin: 0 auto;
+        }
+        .mins{
+            width: 65%;
+            height: 65%;
+            animation: clock 3600s steps(60) infinite;
+        }
+        .min{
+            width: 4px;
+            height: 50%;
+            background-color:black;
+            margin: 0 auto;
+        }
+        .seconds{
+            width: 70%;
+            height: 70%;
+            animation: clock 60s steps(60) infinite;
+        }
+        .second{
+            width: 3px;
+            height: 50%;
+            background-color:red;
+            margin: 0 auto;
+            
+        }
+        @keyframes clock {
+            from {
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hours">
+            <div class="hour"></div>
+        </div>
+        <div class="mins">
+            <div class="min"></div>
+        </div>
+        <div class="seconds">
+            <div class="second"></div>
+        </div>
+
+    </div>
+</body>
+</html>

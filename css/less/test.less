@@ -1,0 +1,27 @@
+
+@p1:300px;
+@p2:skyblue;
+@p3:box1;
+
+
+.box1{
+    background-color: @p2;
+    width: @p1;
+    height: 300px;
+    background-image: url("@{p3}/1.png");
+    &:hover{
+        background-color:orange;
+    }
+    &-ok{
+        background-color:green;
+    }
+
+    .box2{
+        background-color: red;
+    width: 200px;
+    height: $width;
+    }
+
+    
+}
+

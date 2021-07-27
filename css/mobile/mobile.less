@@ -1,0 +1,142 @@
+.w(@n){
+    width: (@n/40rem);
+}
+.h(@n){
+    height:(@n/40rem);
+}
+.f(@n){
+    font-size:(@n/40rem);
+}
+.m(@t:0,@r:0,@b:0,@l:0){
+    margin: (@t/40rem) (@r/40rem) (@b/40rem) (@l/40rem);
+}
+.c{
+    .w(695);
+    margin: 0 auto;
+}
+
+html{
+    font-size: (100/750*40vw);
+    background-color: #eff0f4;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+a{
+    text-decoration:none;
+}
+.title{
+    color: #24253d;
+}
+header:extend(.c){
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    .h(175);
+    a{
+        color: #999;
+    }
+    div.logo{
+        .f(60);
+        a{color:#24253d;}
+    }
+}
+
+.banner:extend(.c){
+    img{
+        width: 100%;
+    }
+}
+nav:extend(.c){
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    .h(329);
+    div.navLink{
+        border-radius: (10/40rem);
+        a{
+            .w(327);
+            .h(104);
+            display: flex;
+            align-items: center;
+            color: white;
+            .f(33);
+            i{
+                .m(0,25,0,30)
+            }
+        }
+    }
+    #course{
+        background-color:#f97053; 
+    }
+    #star{
+        background-color:#cd6efe; 
+    }
+    #sub{
+        background-color:#fe4479; 
+    }
+    #download{
+        background-color:#1bc4fb; 
+    }
+}
+div.courseInfo:extend(.c){
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    .h(394);
+    .courseCategory{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+        border-left: solid 5./40rem blue;
+        padding-left: 8./40rem;
+        .f(33);
+        a{
+            .f(28)
+        }
+    }
+    .courseList{
+        overflow: auto;
+        display:flex;
+        .course{
+            display:flex;
+            flex-flow: column;
+            justify-content:space-evenly;
+            .w(320);
+            .h(324);
+            padding: 0 22./40rem;
+            background-color: white;
+            border-radius:(10/40rem);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+            .m(0,10,0,0);
+            .cover{
+                width:100%;
+            }
+            .courseName{
+                .f(28)
+            }
+            .teacherInfo{
+                display:flex;
+                align-items:center;
+                .avator{
+                    .w(42);
+                    .h(42);
+                    .m(0,10,0,0);
+                    img{
+                        width: 100%;
+                    }
+                }
+                .name{
+                    .f(24);
+                    color:#969393;
+                }
+            }
+        }
+    }
+}

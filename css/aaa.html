@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 132px;
+            height: 271px;
+            margin: 0 auto;
+            background-image:url(./bigtap-mitu-queue-big.png);
+            background-position:0 0;
+            transition:0.5s steps(3);
+
+        }
+        .box1:hover{
+            background-position: -396px,0;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            animation: test;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1) ;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            /* animation-play-state: paused; */
+            animation-fill-mode: both;
+        }
+        .outer{
+            width: 800px;
+            height: 800px;
+            background-color:gray
+        }
+        @keyframes test {
+            to{
+                margin-left: 700px;
+                background-color:yellow;
+            }
+            from{
+                margin-left: 0;
+                background-color: red;
+            }
+        }
+            
+    </style>
+</head>
+<body>
+    <!-- <div class="box1" ></div> -->
+    <div class="outer">
+        <div class="box2"></div>
+    </div>
+    
+</body>
+</html>

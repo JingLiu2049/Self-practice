@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avengers</title>
+    <style>
+        html{
+            perspective: 1000px;
+        }
+        .cube{
+            width:200px;
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: cube 5s linear infinite;
+        }
+        .cube div{
+            position: absolute;
+        }
+        div.p1{
+            transform: rotateY(90deg) translateZ(100px);
+            /* backface-visibility: hidden; */
+        }
+        div.p2{
+            transform: rotateY(-90deg) translateZ(100px);
+            /* backface-visibility: hidden; */
+        }
+        div.p3{
+            transform: rotateX(-90deg) translateZ(100px);
+            /* backface-visibility: hidden; */
+        }
+        div.p4{
+            transform: rotateX(90deg) translateZ(100px);
+            /* backface-visibility: hidden; */
+        }
+        div.p5{
+            transform: rotateY(180deg) translateZ(100px);;
+            /* backface-visibility: hidden; */
+        }
+        div.p6{
+            transform: rotateY(0) translateZ(100px);;
+            /* backface-visibility: hidden; */
+        }
+        @keyframes cube {
+            from {
+                transform:rotateY(0)  rotateZ(0) rotateX(0);
+            }
+            50% {
+                transform:rotateY(1turn)  rotateZ(0) rotateX(0);
+            }
+            to{
+                transform:rotateY(1turn) rotateX(1turn)  rotateZ(0);
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="p1">
+            <img src="./1.jpg" alt="">
+        </div>
+        <div class="p2">
+            <img src="./2.jpg" alt="">
+        </div>
+        <div class="p3">
+            <img src="./3.jpg" alt="">
+        </div>
+        <div class="p4">
+            <img src="./4.jpg" alt="">
+        </div>
+        <div class="p5">
+            <img src="./5.jpg" alt="">
+        </div>
+        <div class="p6">
+            <img src="./6.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

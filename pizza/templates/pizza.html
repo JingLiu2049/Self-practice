@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(document).ready(function () {
+            $("#fieldsets").click(function (e) {
+                let data = $('form').serializeArray();
+                $.post({
+                    url: "http://127.0.0.1:5000/price",
+                    data,
+                    success: function (result) {
+                        $("#Subtotal").val(result.Subtotal.toFixed(2))
+                        $("#GST").val(result.GST.toFixed(2))
+                        $("#Total").val(result.Total.toFixed(2))
+                    }
+                });
+            })
+        });
+    </script>
+    <style>
+        form {
+            width: 450px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            border: 2px skyblue solid;
+        }
+
+        .fieldsets {
+            width: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .field {
+            width: 160px;
+            margin: 5px 0;
+        }
+
+        .field:first-child {
+            display: flex;
+            justify-content: space-around;
+            width: 300px;
+        }
+
+        .field:last-child div {
+            display: flex;
+            flex-flow: row-reverse;
+            justify-content: space-between;
+            align-items: baseline;
+            width: 150px;
+        }
+
+        input[type=text] {
+            width: 50%;
+            margin: 5px;
+        }
+
+        .btns {
+            margin: 15px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="/" method="POST">
+        <h2>Lincoln Pizza House</h2>
+        <div class="fieldsets" id="fieldsets">
+            {% for i in formData %}
+
+            <fieldset class="field">
+                <legend>{{i}}</legend>
+                {%for j in formData[i]%}
+                <div class="inner">
+                    <input type="{{j.type}}" name="{{j.name}}" value="{{j.value}}" id="{{j.title}}">
+                    <label for="{{j.title}}">{{j.title}}</label>
+                </div>
+
+                {%endfor%}
+            </fieldset>
+
+            {% endfor %}
+        </div>
+        <div class="btns">
+            <input type="submit">
+            <input type="reset" id="reset">
+        </div>
+    </form>
+
+</body>
+
+</html>
